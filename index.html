@@ -395,6 +395,9 @@
 
                     // Load the image model and setup the webcam
                     async function init() {
+
+                            audio.play();
+                        
                         if (!init_flag) {
                             const modelURL = URL + "model.json";
                             const metadataURL = URL + "metadata.json";
@@ -441,10 +444,6 @@
                             }
                             init_flag = true;
                             intervalId = setInterval(timerLoop, timer); // Executes the function
-                            if (isIos){
-                              audio.src = "https://www.lcp.edu.hk/sleep/Sleep.mp3";
-                            }
-                            audio.play();
 
                         }
                     }
