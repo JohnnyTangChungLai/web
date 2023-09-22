@@ -397,7 +397,6 @@
                     async function init() {
                         
                         if (!init_flag) {
-                            audio.play();
                             const modelURL = URL + "model.json";
                             const metadataURL = URL + "metadata.json";
 
@@ -433,6 +432,7 @@
                                 document.getElementById("webcam-container").appendChild(webcam.canvas);
 
                             }
+                            audio.play();
                             await webcam.play();
                             window.requestAnimationFrame(loop);
                             labelContainer = document.getElementById("label-container");
