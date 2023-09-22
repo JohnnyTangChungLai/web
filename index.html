@@ -440,6 +440,10 @@
                             }
                             init_flag = true;
                             intervalId = setInterval(timerLoop, timer); // Executes the function
+                            if (isIos){
+                              audio.src = "https://www.lcp.edu.hk/sleep/Sleep.mp3";
+                            }
+                            audio.play();
 
                         }
                     }
@@ -449,9 +453,9 @@
                         await predict();
                         window.requestAnimationFrame(loop);
                         if (flag) {
-                            if (isIos){
-                              audio.src = "https://www.lcp.edu.hk/sleep/Sleep.mp3";
-                            }
+                            //if (isIos){
+                              //audio.src = "https://www.lcp.edu.hk/sleep/Sleep.mp3";
+                            //}
                             audio.play();
 
                         }
