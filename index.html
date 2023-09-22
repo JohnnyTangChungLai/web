@@ -299,7 +299,7 @@
                 <div class="line">
                     <div class="row">
                         <div class="col-md-12 s-calender">
-                            <h3><img src="image/arrow.png" class="pr-3">安心睡1</h2>
+                            <h3><img src="image/arrow.png" class="pr-3">安心睡2</h2>
                         </div>
                     </div>
                 </div>
@@ -481,7 +481,9 @@
                         if (isIos) {
                             can = document.createElement('canvas');
                             video = document.getElementById('camera');
-                            can.getContext('2d').drawImage(video, 0, 0, 500, 500);
+                            can.width = video.videoWidth;
+                            can.height = video.videoHeight;
+                            can.getContext('2d').drawImage(video, 0, 0, video.videoWidth, video.videoHeight);
                         }
                         else {
                             can = document.getElementById('camera');
