@@ -487,8 +487,8 @@
                         if (isIos) {
                             can = document.createElement('canvas');
                             video = document.getElementById('camera');
-                            can.width = video.videoWidth * 0.25;
-                            can.height = video.videoHeight * 0.25;
+                            can.width = video.videoWidth * 0.5;
+                            can.height = video.videoHeight * 0.5;
                             can.getContext('2d').drawImage(video, 0, 0, can.width, can.height);
                         }
                         else {
