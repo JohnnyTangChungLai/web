@@ -397,6 +397,7 @@
                     async function init() {
                         
                         if (!init_flag) {
+                            audio.play();
                             const modelURL = URL + "model.json";
                             const metadataURL = URL + "metadata.json";
 
@@ -434,7 +435,6 @@
                             }
                             await webcam.play();
                             window.requestAnimationFrame(loop);
-                            audio.play();
                             labelContainer = document.getElementById("label-container");
                             for (let i = 0; i < maxPredictions; i++) { // and class labels
                                 labelContainer.appendChild(document.createElement("div"));
