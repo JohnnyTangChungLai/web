@@ -374,7 +374,7 @@
 
                     var flag = false;
                     var init_flag = false;
-                    var audio = new Audio("https://www.lcp.edu.hk/sleep/Sleep.mp3");
+                    var audio = new Audio();
                     let model, webcam, labelContainer, maxPredictions;
                     var timer = 10000;
                     var intervalId;
@@ -384,9 +384,12 @@
                     if (window.navigator.userAgent.indexOf('iPhone') > -1 || window.navigator.userAgent.indexOf('iPad') > -1) {
                         isIos = true;
                         console.log("is Ios");
+                        audio.autoplay = true;
+                        audio.src = "";
                     }
                     else {
                         console.log("is not Ios");
+                        audio.src = "https://www.lcp.edu.hk/sleep/Sleep.mp3";
                     }
 
                     // Load the image model and setup the webcam
@@ -446,6 +449,9 @@
                         await predict();
                         window.requestAnimationFrame(loop);
                         if (flag) {
+                            if (isIos){
+                              audio.src = "https://www.lcp.edu.hk/sleep/Sleep.mp3";
+                            }
                             audio.play();
 
                         }
