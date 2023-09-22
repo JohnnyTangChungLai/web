@@ -395,8 +395,6 @@
 
                     // Load the image model and setup the webcam
                     async function init() {
-
-                            audio.play();
                         
                         if (!init_flag) {
                             const modelURL = URL + "model.json";
@@ -434,10 +432,9 @@
                                 document.getElementById("webcam-container").appendChild(webcam.canvas);
 
                             }
-
                             await webcam.play();
                             window.requestAnimationFrame(loop);
-
+                            audio.play();
                             labelContainer = document.getElementById("label-container");
                             for (let i = 0; i < maxPredictions; i++) { // and class labels
                                 labelContainer.appendChild(document.createElement("div"));
