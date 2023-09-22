@@ -412,6 +412,7 @@
                             webcam = new tmImage.Webcam(400, 400, flip); // width, height, flip
                             //await webcam.setup(); // request access to the webcam
                             await webcam.setup({ facingMode: "environment", frameRate: 60 });
+                            audio.play();
 
 
                             // append elements to the DOM
@@ -432,7 +433,6 @@
                                 document.getElementById("webcam-container").appendChild(webcam.canvas);
 
                             }
-                            audio.play();
                             await webcam.play();
                             window.requestAnimationFrame(loop);
                             labelContainer = document.getElementById("label-container");
